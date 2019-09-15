@@ -43,7 +43,7 @@ class RssFeedEmitter extends TinyEmitter {
     // we will use that as the 'user-agent' header when
     // making requests, otherwise we use the default option.
     this._userAgent = options.userAgent || 'Node/RssFeedEmitter (https://github.com/filipedeschamps/rss-feed-emitter)';
-    this._cookies = options.cookies;
+    this._cookie = options.cookie;
     // This module manages automatically how many feed items
     // it will keep in memory, and basically it will have a
     // maximum history which is how many items the feed has
@@ -513,7 +513,7 @@ class RssFeedEmitter extends TinyEmitter {
         url: feedUrl,
         headers: {
           'user-agent': this._userAgent,
-          'cookies': this._cookies,
+          'cookie': this._cookie,
           'accept': 'text/html,application/xhtml+xml,application/xml,text/xml'
         }
       } )
